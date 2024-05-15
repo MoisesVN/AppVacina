@@ -14,13 +14,13 @@ export default function CarteiraHome(){
     return(
         <View>
             <View>
-                <Text style={styles.textTitle}>Deve ser importado os componetes dessa pagina para ser exibida na pagina do home</Text>
+                <Text style={styles.textTitle}> minha carteira</Text>
 
                     <TouchableOpacity
                     style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.navigate("Carteira")}
                     >
-                        <Text style={styles.textButtonAcessar}>Volta pagina Home</Text>
+                        <Text style={styles.textButtonAcessar}>Acessar Minha Carteira</Text>
                     </TouchableOpacity>              
 
             </View>

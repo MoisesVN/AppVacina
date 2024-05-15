@@ -1,32 +1,50 @@
-import React, { useState} from "react";
-import { View, Text, TouchableOpacity} from "react-native";
-
+import { View,Text,StyleSheet,TouchableOpacity,Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import styles from './style';
-
-export default function MenuConfig(){
-    //função usada em botões para trocar de tela
+export default function Info(){
     const navigation = useNavigation();
-    //const [textButton, setTextButton] = useState("Acessar");
-
-
     return(
-        <View>
-            <View>
-                <Text style={styles.textTitle}>pagina perfil Configuração</Text>
-
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Home")}
-                    >
-                        <Text style={styles.textButtonAcessar}>Volta pagina Home</Text>
-                    </TouchableOpacity>              
-
-            </View>
-        </View>
-        
+    <View style={styles.Tela1}>
+        <View style={styles.Tela}> 
+        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.botao}>
+        <Image source={require("../imagens/kisspng-brand-logo-black-and-white-triangle-arrow-symbol-5a76c6d1df2c13.8388288415177335859141 (1).png")}/>
+    </TouchableOpacity>
+    <View style={styles.Tela}><Text style={styles.Text}>informações do cadastro</Text>
+    <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao2}>
+    <Image source={require("../imagens/kisspng-computer-icons-emergency-exit-download-clip-art-exit-door-5b2c9a0a3c76a8.0319592615296496742477 (1).png")}/>
+    </TouchableOpacity>
+    </View>
+    </View>
+    </View>
     )
-
-
 }
+const styles = StyleSheet.create({
+    botao:{
+        marginLeft:20,
+        marginTop:40,
+        padding:10,
+        backgroundColor:'#392DE9',
+        borderRadius:8,
+    },
+    botao2:{
+        marginLeft:280,
+        marginTop:500,
+        padding:10,
+        backgroundColor:'#392DE9',
+        borderRadius:8,
+    },
+    Tela:{
+        alignItems:'flex-start',
+    },
+    Tela1:{
+        flex:1,
+        backgroundColor:'#1E90FF'
+    },
+    Text:{marginTop:30,
+        marginLeft:20,
+        fontSize: 20,
+    },
+    Tela2:{
+        marginTop:30
+    }
+})
