@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     botao2:{
         marginLeft:220,
-        marginTop:500,
+        marginTop:10,
         padding:10,
         backgroundColor:'#392DE9',
         borderRadius:8,
