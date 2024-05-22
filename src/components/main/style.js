@@ -2,46 +2,71 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
 
-    formContext: {
-        width:"100%",
-        height:"100%",
-        bottom:0,
-        backgroundColor:"#C0C0C0",
-        alignItems: "center",
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-        marginTop:30,
+    buttonAcessar:{
+        marginLeft:180
+    },
+    Tela:{
+        
+    },
+    title:{
+      fontSize:20,
+      paddingLeft:10,
+      color: "dodgerblue"
+    },
+    Login: {
+      fontSize:40,
+      marginTop:180,
+      color: "dodgerblue",
+      marginBottom: "7%"
     },
     form:{
-        width:"100%",
-        height:"auto",
-        marginTop:30,
-        padding:10
+        marginTop:-80,
+        flex:1,
+        backgroundColor:'#ffffff',
+        padding:10,
     },
-    textButtonAcessar:{
+    input:{
+        borderWidth: 4,
+        borderColor: "dodgerblue",
+        borderRadius:10,
+        backgroundColor:"#DCDCDC",
+        height:60,
+        margin:12,
+        paddingLeft:10,
+    },
+    textButtonClean:{
         fontSize:22,
         color:"#FFFFFF"
     },
-    buttonAcessar:{
-        borderRadius:50,
-        alignItems:"center",
-        justifyContent:"center",
-        width:"90%",
-        backgroundColor:"#1E90FF",
-        paddingTop:10,
-        paddingBottom:10,
-        marginLeft:12,
-        margin:30
+    botao:{
+        backgroundColor:"#FFFFFF",
+        borderRadius:8,
+        marginLeft:25,
+        flex:1,
+        alignItems:'center',
+        marginTop:10,
+        padding:6,
     },
-    textTitle: {
-        color: "#1C1C1C",
-        fontSize: 36,
-        fontWeight: "bold",
-        paddingTop:100,
-        marginLeft:20
+    botaoS:{
+        fontSize:22,
+        color:"#253BFF",
+        borderColor:'#392DE9',
+    },
+    botaoSalvar:{
+    backgroundColor:"#392DE9",
+    borderRadius:8,
+    },
+    botaoArea:{
+    flexDirection:"row",
+    width:'90%',
+    marginTop:70,
+    alignItems:'center',
+    justifyContent:"space-between"
+    },
+    textButtonAcessar: {
+        color: "dodgerblue",
+        marginLeft: "31%"
     }
-
-    
 
 });
 

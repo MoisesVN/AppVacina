@@ -2,46 +2,38 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
 
-    formContext: {
-        width:"100%",
-        height:"100%",
-        bottom:0,
-        backgroundColor:"#C0C0C0",
-        alignItems: "center",
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-        marginTop:30,
+    botao:{
+        marginLeft:20,
+        marginTop:40,
+        padding:10,
+        backgroundColor:'#392DE9',
+        borderRadius:8,
     },
-    form:{
-        width:"100%",
-        height:"auto",
-        marginTop:30,
-        padding:10
+    botao2:{
+        marginLeft:220,
+        marginTop:500,
+        padding:10,
+        backgroundColor:'#392DE9',
+        borderRadius:8,
     },
-    textButtonAcessar:{
-        fontSize:22,
-        color:"#FFFFFF"
+    Tela:{
+        alignItems:'flex-start',
     },
-    buttonAcessar:{
-        borderRadius:50,
-        alignItems:"center",
-        justifyContent:"center",
-        width:"90%",
-        backgroundColor:"#1E90FF",
-        paddingTop:10,
-        paddingBottom:10,
-        marginLeft:12,
-        margin:30
+    Tela1:{
+        flex:1,
+        backgroundColor:'#1E90FF'
     },
-    textTitle: {
-        color: "#1C1C1C",
-        fontSize: 36,
-        fontWeight: "bold",
-        paddingTop:100,
-        marginLeft:20
-    }
-
-    
+    Text:{marginTop:30,
+        marginLeft:20,
+        fontSize: 20,
+    },
+    Text2:{
+        color:'#FFFFFF',
+        fontSize:20
+    },
+    Tela2:{
+        marginTop:30
+    } 
 
 });
 
