@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-
+    
     formContext: {
         width:"100%",
         height:"100%",
@@ -39,8 +39,43 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         paddingTop:100,
         marginLeft:20
+    },
+    
+    Text: {
+        marginTop: 30,
+        marginLeft: 20,
+        fontSize: 20,
+    },
+    botaoI: {
+        color: "#FFFFFF"
+    },
+    telaP: {
+        flex: 1,
+        backgroundColor: 'red',
+        display: "flex"
+    },
+    botao: {
+        marginLeft: 20,
+        marginTop: 40,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 90,
+    },
+    Tela: {
+        alignItems: 'flex-start',
+    },
+    botao2: {
+        marginBottom: 20,
+        borderRadius: 90,
+        padding: 30,
+        backgroundColor: '#392DE9'
+    },
+    Tela2: {
+        position: "absolute",
+        alignItems: 'center',
+        backgroundColor: "red",
+        marginTop: 490,
+        marginLeft: 160
     }
-
     
 
 });

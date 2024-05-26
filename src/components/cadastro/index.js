@@ -1,39 +1,21 @@
-import React, { useState} from "react";
-import { View, Text, TouchableOpacity} from "react-native";
-
+import { View,Text,TouchableOpacity,Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import  styles  from "./style.js";
 
-import styles from './style';
-
-export default function Cadastro(){
-    //função usada em botões para trocar de tela
+export default function Info(){
     const navigation = useNavigation();
-    //const [textButton, setTextButton] = useState("Acessar");
-
-
     return(
-        <View>
-            <View>
-                <Text style={styles.textTitle}>pagina do Cadastro</Text>
-
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Home")}
-                    >
-                        <Text style={styles.textButtonAcessar}>Confimar cadastro - Pagina HOME</Text>
-                    </TouchableOpacity>
-                   
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Main")}
-                    >
-                        <Text style={styles.textButtonAcessar}>Volta - Pagina Login</Text>
-                    </TouchableOpacity>
-
-            </View>
-        </View>
-        
+    <View style={styles.Tela1}>
+        <View style={styles.Tela}> 
+        <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao}>
+        <Image source={require("../imagens/kisspng-brand-logo-black-and-white-triangle-arrow-symbol-5a76c6d1df2c13.8388288415177335859141 (1).png")}/>
+    </TouchableOpacity>
+    <View style={styles.Tela}><Text style={styles.Text}>Tela de cadastro</Text>
+    <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao2}>
+    <Text style={styles.Text2}>Confirmar</Text>
+    </TouchableOpacity>
+    </View>
+    </View>
+    </View>
     )
-
-
 }

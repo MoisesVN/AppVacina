@@ -1,44 +1,65 @@
-import React, { useState} from "react";
-import { View, Text, TouchableOpacity} from "react-native";
-
+import React, { useState } from "react";
+import { View, TextInput, Text, TouchableOpacity, Alert } from "react-native";
+import styles from "./style.js";
 import { useNavigation } from "@react-navigation/native";
+import logo from "../imagens/logo.png"
 
-import styles from './style';
-
-export default function Main(){
-    //função usada em botões para trocar de tela
+export default function Form() {
     const navigation = useNavigation();
-    //const [textButton, setTextButton] = useState("Acessar");
 
+    const [matricula, setMatricula] = useState(null)
+    const [senha, setSenha] = useState(null)
+    const [textButton] = useState("Entrar")
 
-    return(
-        <View>
-            <View>
-                <Text style={styles.textTitle}>pagina do login</Text>
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Home")}
-                    >
-                        <Text style={styles.textButtonAcessar}>Entrar - Pagina HOME</Text>
+    const createAlert = () => Alert.alert(
+        "Oops!",
+        "Verifique se o campo matrícula e senha estão preenchidos."
+    );
+
+    function Entrar() {
+        if (matricula == null) {
+            createAlert();
+        } else {
+            if (senha == null) {
+                createAlert();
+            } else {
+                navigation.navigate("Home");
+            }
+        }
+    }
+    return (
+        <View style={styles.form}>
+            <Text style={styles.Login}>Faça Login</Text>
+            <View style={styles.Tela}>
+                <Text style={styles.title}>Digite seu CPF</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setMatricula}
+                    value={matricula}
+                    placeholder="CPF"
+                    keyboardType="numeric"
+                />
+                <Text style={styles.title}>Digite sua Senha</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setSenha}
+                    value={senha}
+                    placeholder="Senha"
+                />
+                <TouchableOpacity style={styles.buttonAcessar} onPress={() => navigation.navigate("RecuperarConta")}>
+                    <Text style={styles.textButtonAcessar}>Esqueci minha senha</Text>
+                </TouchableOpacity>
+                <View style={styles.botaoArea}>
+                    <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("Cadastro")}>
+                        <Text style={styles.botaoS}>Cadastrar</Text>
                     </TouchableOpacity>
-
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("Cadastro")}
+                    <TouchableOpacity style={[styles.botao, styles.botaoSalvar]}
+                        onPress={() => Entrar()}
                     >
-                        <Text style={styles.textButtonAcessar}>Cadastre-se - Pagina Cadastro</Text>
+                        <Text style={styles.textButtonClean}>{textButton}</Text>
                     </TouchableOpacity>
-
-                    <TouchableOpacity
-                    style={styles.buttonAcessar}
-                    onPress={() => navigation.navigate("RecuperarConta")}
-                    >
-                        <Text style={styles.textButtonAcessar}>Esqueci senha - Pagina RecuperarConta</Text>
-                    </TouchableOpacity>
+                </View>
             </View>
         </View>
-        
     )
-
-
 }
