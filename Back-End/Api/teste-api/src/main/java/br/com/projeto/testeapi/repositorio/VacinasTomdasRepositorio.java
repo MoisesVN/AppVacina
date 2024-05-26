@@ -1,11 +1,12 @@
 package br.com.projeto.testeapi.repositorio;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import br.com.projeto.testeapi.modelo.VacinasTomadas;
+import br.com.projeto.testeapi.modelo.VacinasTomdasId;
 
 @Repository
-public interface VacinasTomdasRepositorio extends CrudRepository<VacinasTomadas, Long> {
+public interface VacinasTomdasRepositorio extends JpaRepository <VacinasTomadas, VacinasTomdasId> {
     
 }

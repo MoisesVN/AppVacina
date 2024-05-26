@@ -1,14 +1,13 @@
 package br.com.projeto.testeapi.modelo;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,9 +27,10 @@ public class Cadastro{
     private String nome;
     private LocalDate dataNasc;
 
-    @OneToMany
-    @JoinColumn(name = "id_cadastro")
-    private List<CarteiraVacina> carteiraVacina;
+  
 
+   @ManyToOne
+   @JoinColumn(name = "id_conta"/* , nullable = false */)
+    private Conta conta;
 
 }

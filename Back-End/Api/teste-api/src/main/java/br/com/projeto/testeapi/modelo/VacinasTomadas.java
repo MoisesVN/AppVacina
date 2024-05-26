@@ -3,12 +3,12 @@ package br.com.projeto.testeapi.modelo;
 
 
 
+import java.time.LocalDate;
+
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,19 +17,17 @@ import lombok.Setter;
 @Table(name = "vacinas_Tomadas")
 @Getter
 @Setter
+@IdClass(VacinasTomdasId.class)
 public class VacinasTomadas {
 
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+private Long fk_idListaVacina;
 
-private int doseTomadas;
+@Id
+private Long fk_idCarteiraVacina;
 
-@OneToOne
-@JoinColumn(name = "fk_carteiraVacina",referencedColumnName = "id_carteiraVacina")
-private CarteiraVacina carteiraVacina;
-
-
+private Integer doseTomadas;
+private LocalDate dataVacinaTomda;
 
 }
 

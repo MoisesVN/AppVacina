@@ -1,0 +1,115 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ContaControle",
+    "collectionId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+    "dateExported": "2024-05-26T23:42:33.181Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f848c3ba-4ad7-4bcb-99ac-7fa4f5fe68d1",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "listar Contas",
+            "url": "http://localhost:8080/conta/listar",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-26T21:42:51.468Z",
+            "modified": "2024-05-26T21:43:10.215Z",
+            "headers": []
+        },
+        {
+            "_id": "6bf2249a-93a7-4639-95e0-7af333842321",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Listar ID Conta",
+            "url": "http://localhost:8080/conta/1",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-26T21:53:28.663Z",
+            "modified": "2024-05-26T21:53:40.773Z",
+            "headers": []
+        },
+        {
+            "_id": "a5bc9b96-56f9-4930-8571-061f87a921e5",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Cadastrar Conta",
+            "url": "http://localhost:8080/conta/cadastrar",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-26T21:44:19.493Z",
+            "modified": "2024-05-26T21:48:42.701Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"senha\":\"123testeSenh@\",\n  \"email\": \"email@teste.com\",\n  \"telefone\": \"81912345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "bc608e44-a712-45e5-aec2-1dbcaa701298",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Atualizar Email",
+            "url": "http://localhost:8080/conta/email/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-05-26T21:49:37.019Z",
+            "modified": "2024-05-26T21:51:40.707Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"novo@email.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "70cfaa24-8191-40fa-bc14-36bde59c3c24",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Atualizar Senha",
+            "url": "http://localhost:8080/conta/senha/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-26T21:54:56.833Z",
+            "modified": "2024-05-26T21:56:38.238Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"senha\":\"NovaSenha\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8d674854-b6a3-4d2a-b234-70428b3ea1aa",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Atualizar Telefone",
+            "url": "http://localhost:8080/conta/telefone/1",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-05-26T21:57:18.594Z",
+            "modified": "2024-05-26T21:58:15.810Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"telefone\":\"81122333\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5a319929-3e86-47c1-8e34-b62979c8dd2d",
+            "colId": "e8c8f4ef-8f7d-4f05-bcc4-f8f5eae57286",
+            "containerId": "",
+            "name": "Deletar Conta",
+            "url": "http://localhost:8080/conta/deletar/1",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-05-26T21:59:00.862Z",
+            "modified": "2024-05-26T21:59:25.920Z",
+            "headers": []
+        }
+    ],
+    "ref": "JAMvhly46uhdRrP5H7_J-QZv8HOrEmqilSnqE7x1igxwohSnIRcdzTCv0YTiU1-D9u2sceLhlq0s5Z8VZxpkhg"
+}

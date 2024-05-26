@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version>
+		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.projeto</groupId>
-	<artifactId>teste-api</artifactId>
+	<artifactId>back-app-vacina</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>teste-api</name>
+	<name>back-app-vacina</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -47,17 +47,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-	<!-- depedencia pra colocar foto -->
-	<!-- <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-    </dependency> -->
-	<!-- depedencia pra colocar foto -->
 	</dependencies>
 
 	<build>
