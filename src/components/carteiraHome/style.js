@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
         paddingTop:10,
         paddingBottom:10,
         marginLeft:12,
-        margin:30
+        margin:30,
+       
     },
     textTitle: {
         color: "#1C1C1C",
