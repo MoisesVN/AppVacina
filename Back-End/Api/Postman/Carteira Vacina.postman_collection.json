@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "4423a905-f611-4b01-8a99-21e1babb6e32",
+		"name": "Carteira Vacina",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33496653"
+	},
+	"item": [
+		{
+			"name": "Listar Carteira",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carteira-vacina/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carteira-vacina",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar ID Casdastro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carteira-vacina/carteira/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carteira-vacina",
+						"carteira",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Carteira",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"foto\":\"\",\r\n  \"cadastro\":{\r\n    \"id_cadastro\":2,\r\n    \"cpf\": null,\r\n    \"docSUS\": null,\r\n    \"nome\": null,\r\n    \"dataNasc\": null,\r\n    \"conta\": null\r\n    \r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/carteira-vacina/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carteira-vacina",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Foto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"foto\":\"atualizada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/carteira-vacina/foto/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carteira-vacina",
+						"foto",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Carteira",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carteira-vacina/deletar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carteira-vacina",
+						"deletar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

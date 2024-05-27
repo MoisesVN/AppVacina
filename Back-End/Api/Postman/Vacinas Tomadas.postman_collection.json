@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "13d8ad6f-8770-482f-a48d-c027f9fbf38e",
+		"name": "Vacinas Tomadas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33496653"
+	},
+	"item": [
+		{
+			"name": "Listar Vacinas Tomas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vacinas-tomadas/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacinas-tomadas",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Vacina Tomda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fk_idCarteiraVacina\":1,\r\n  \"fk_idListaVacina\":2,\r\n  \"doseTomadas\":1,\r\n  \"dataVacinaTomda\":\"2021-05-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vacinas-tomadas/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacinas-tomadas",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Vacina Tomada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vacinas-tomadas/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacinas-tomadas",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Dose Tomada",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"doseTomadas\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vacinas-tomadas/dose/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacinas-tomadas",
+						"dose",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Data de Vacinação",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dataVacinaTomda\": \"2024-05-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vacinas-tomadas/data/2/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vacinas-tomadas",
+						"data",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
