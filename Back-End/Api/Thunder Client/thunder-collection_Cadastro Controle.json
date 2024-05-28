@@ -1,0 +1,115 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Cadastro Controle",
+    "collectionId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+    "dateExported": "2024-05-26T23:42:40.017Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "79089112-e998-4c11-8cab-483a734afd2a",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Listar Cadastro",
+            "url": "http://localhost:8080/cadastros/listar",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-26T22:19:27.957Z",
+            "modified": "2024-05-26T22:20:27.613Z",
+            "headers": []
+        },
+        {
+            "_id": "7513503d-3d6a-4797-a4f1-81d53f0a66b8",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Cadastrar Cadastros",
+            "url": "http://localhost:8080/cadastros/cadastrar",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-26T22:20:50.036Z",
+            "modified": "2024-05-26T22:30:58.921Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cpf\":\"12345678900\",\n  \"docSUS\":\"147852369\",\n  \"nome\":\"teste\",\n  \"dataNasc\":\"2024-05-26\",\n  \"conta\":{\n    \"id_conta\": 3,\n    \"senha\": \"123testeSenh@\",\n    \"email\": \"email@teste.com\",\n    \"telefone\": \"\"\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "09b9bf05-9c66-4289-a1c1-241af6bdcd9c",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "LIstar ID Cadastro",
+            "url": "http://localhost:8080/cadastros/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-26T22:35:22.746Z",
+            "modified": "2024-05-26T22:35:43.398Z",
+            "headers": []
+        },
+        {
+            "_id": "1d00fd0a-4aac-4c99-844f-c6975f7403a3",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Atualizar DocSUS",
+            "url": "http://localhost:8080/cadastros/docsus/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-26T22:36:39.750Z",
+            "modified": "2024-05-26T22:38:28.659Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"docSUS\":\"000000000\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "4b344221-f19b-45bb-8c86-ad9f6b988d49",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Atualizar Nome",
+            "url": "http://localhost:8080/cadastros/nome/1",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-05-26T22:45:50.918Z",
+            "modified": "2024-05-26T22:47:55.523Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\":\"Novo Nome\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ecd5f115-a159-441b-b5ce-279eccb21d8e",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Atualizar Data Nasc",
+            "url": "http://localhost:8080/cadastros/datnasc/1",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-05-26T22:48:44.506Z",
+            "modified": "2024-05-26T22:49:40.956Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"dataNasc\":\"2024-05-26\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "addeb84c-1655-451c-8223-c40bd5a28047",
+            "colId": "0fe3b5f8-d266-45c0-8565-352afba26a7c",
+            "containerId": "",
+            "name": "Deletar Cadastro",
+            "url": "http://localhost:8080/cadastros/deletar/4",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-05-26T22:50:21.909Z",
+            "modified": "2024-05-26T22:50:59.661Z",
+            "headers": []
+        }
+    ],
+    "ref": "V_fbaHkooy4wZcuek6pmzBw4hMdg0cuGnU6AJOoApFVjW-gvgWIPdTTXNiJT1FLlG7R_QVk1i19Bk1CQ5ndKRw"
+}

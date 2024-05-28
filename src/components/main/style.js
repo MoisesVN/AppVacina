@@ -6,23 +6,28 @@ const styles = StyleSheet.create({
         marginLeft:180
     },
     Tela:{
-        marginTop:50
+        
     },
     title:{
-      fontSize:17,
+      fontSize:20,
       paddingLeft:10,
+      color: "dodgerblue"
     },
     Login: {
-      fontSize:30,
+      fontSize:40,
       marginTop:180,
+      color: "dodgerblue",
+      marginBottom: "7%"
     },
     form:{
         marginTop:-80,
         flex:1,
-        backgroundColor:'#1E90FF',
+        backgroundColor:'#ffffff',
         padding:10,
     },
     input:{
+        borderWidth: 4,
+        borderColor: "dodgerblue",
         borderRadius:10,
         backgroundColor:"#DCDCDC",
         height:60,
@@ -54,10 +59,14 @@ const styles = StyleSheet.create({
     botaoArea:{
     flexDirection:"row",
     width:'90%',
-    marginTop:130,
+    marginTop:70,
     alignItems:'center',
     justifyContent:"space-between"
     },
+    textButtonAcessar: {
+        color: "dodgerblue",
+        marginLeft: "31%"
+    }
 
 });
 

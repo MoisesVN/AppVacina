@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Carteira Vacina",
+    "collectionId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+    "dateExported": "2024-05-26T23:42:45.232Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "55fd1662-8c01-4d85-a506-1d32f1108d48",
+            "colId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+            "containerId": "",
+            "name": "Listar Carteira",
+            "url": "http://localhost:8080/carteira-vacina/listar",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-26T23:05:39.837Z",
+            "modified": "2024-05-26T23:05:58.301Z",
+            "headers": []
+        },
+        {
+            "_id": "2dc57c42-cbbb-43e0-9bff-6c460e072717",
+            "colId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+            "containerId": "",
+            "name": "Listar ID Casdastro",
+            "url": "http://localhost:8080/carteira-vacina/carteira/3",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-26T23:09:44.532Z",
+            "modified": "2024-05-26T23:10:28.912Z",
+            "headers": []
+        },
+        {
+            "_id": "b988b412-ae98-4304-8fca-9388632ffd05",
+            "colId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+            "containerId": "",
+            "name": "Cadastrar Carteira",
+            "url": "http://localhost:8080/carteira-vacina/cadastrar",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-26T23:06:26.650Z",
+            "modified": "2024-05-26T23:08:25.917Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"foto\":\"\",\n  \"cadastro\":{\n    \"id_cadastro\":2,\n    \"cpf\": null,\n    \"docSUS\": null,\n    \"nome\": null,\n    \"dataNasc\": null,\n    \"conta\": null\n    \n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d63aebe4-7111-4e3f-b1f2-3c7247a14c78",
+            "colId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+            "containerId": "",
+            "name": "Atualziar foto",
+            "url": "http://localhost:8080/carteira-vacina/foto/3",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-26T23:11:12.832Z",
+            "modified": "2024-05-26T23:11:45.086Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"foto\":\"atualizada\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f4cc8359-3048-462a-8671-fdfe4792f2a6",
+            "colId": "8cd111c0-a8e9-4f26-b85b-57c1b5f888f0",
+            "containerId": "",
+            "name": "Deletar Carteira",
+            "url": "http://localhost:8080/carteira-vacina/deletar/3",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-26T23:13:24.715Z",
+            "modified": "2024-05-26T23:13:56.475Z",
+            "headers": []
+        }
+    ],
+    "ref": "MATVx_6FPF2mK9DGNzHPwlRgF2NO9Fjnnc5ksGUjbW5ILHUpoc5g3U3k_1gCxWXlUEo6BjapkJ3pYkAVshdRvg"
+}

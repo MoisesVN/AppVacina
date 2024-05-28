@@ -1,0 +1,86 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Vacinas Tomadas",
+    "collectionId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+    "dateExported": "2024-05-26T23:42:48.473Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fb3805ac-327b-4b31-90de-6d62fd3701e7",
+            "colId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+            "containerId": "",
+            "name": "Listar Vacinas Tomadas",
+            "url": "http://localhost:8080/vacinas-tomadas/listar",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-26T23:23:47.068Z",
+            "modified": "2024-05-26T23:24:23.961Z",
+            "headers": []
+        },
+        {
+            "_id": "d5a7ded5-7706-474e-9f56-4773893e7b94",
+            "colId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+            "containerId": "",
+            "name": "Cadastrar Vacina Tomda",
+            "url": "http://localhost:8080/vacinas-tomadas/cadastrar",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-26T23:24:44.456Z",
+            "modified": "2024-05-26T23:29:41.246Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fk_idCarteiraVacina\":1,\n  \"fk_idListaVacina\":2,\n  \"doseTomadas\":1,\n  \"dataVacinaTomda\":\"2021-05-22\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d2a913ce-7eae-4b4b-98c3-1eea0bcd73e5",
+            "colId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+            "containerId": "",
+            "name": "Listar Vacina Tomada",
+            "url": "http://localhost:8080/vacinas-tomadas/2/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-26T23:32:09.088Z",
+            "modified": "2024-05-26T23:32:57.333Z",
+            "headers": []
+        },
+        {
+            "_id": "0b8f5e7d-2e24-4e6e-a39f-7286c628f458",
+            "colId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+            "containerId": "",
+            "name": "Atualizar Dose Tomada",
+            "url": "http://localhost:8080/vacinas-tomadas/dose/2/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-26T23:33:53.487Z",
+            "modified": "2024-05-26T23:39:36.131Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"doseTomadas\":4\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c37f8517-ff8b-432f-9c0a-b69128bb74aa",
+            "colId": "f560cea9-250e-4698-ad27-03addf6f95c1",
+            "containerId": "",
+            "name": "Atualizar Data de Vacinação",
+            "url": "http://localhost:8080/vacinas-tomadas/data/2/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-05-26T23:40:13.761Z",
+            "modified": "2024-05-26T23:40:52.132Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"dataVacinaTomda\": \"2024-05-26\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "-7zZbpq-_7n31wdMuz64ICMlmgSXLyjgdxh2qzcyXoaavVUP4WPpu3DbCroOLbM124Hf06aTNNLZHmdq3WX0fA"
+}

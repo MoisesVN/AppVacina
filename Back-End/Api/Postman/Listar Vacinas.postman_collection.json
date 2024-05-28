@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "5ae79036-d98c-4ed8-8468-b86f47dd0ee6",
+		"name": "Listar Vacinas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33496653"
+	},
+	"item": [
+		{
+			"name": "Listar Vacinas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lista-vacina/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lista-vacina",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Vacina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vacina\": \"BCG – ID\",\r\n  \"descricao\": \"previnir Formas graves de tuberculose\",\r\n  \"quantidadeDose\": 1,\r\n  \"dataParaVacinar\": 0\r\n  \r\n}\r\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/lista-vacina/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lista-vacina",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar ID Vacina",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lista-vacina/vacina/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lista-vacina",
+						"vacina",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Vacina",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vacina\": \"Vacina contra hepatite B (1)\",\r\n  \"descricao\": \"Hepatite B\",\r\n  \"quantidadeDose\": 2,\r\n  \"dataParaVacinar\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/lista-vacina/vacina/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lista-vacina",
+						"vacina",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Vacina",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lista-vacina/vacina/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lista-vacina",
+						"vacina",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
