@@ -1,40 +1,110 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
 
 const styles = StyleSheet.create({
 
-    botao:{
-        marginLeft:20,
-        marginTop:40,
-        padding:10,
-        backgroundColor:'#392DE9',
-        borderRadius:8,
+    formContext: {
+        width: "100%",
+        height: "100%",
+        bottom: 0,
+        backgroundColor: "#C0C0C0",
+        alignItems: "center",
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        marginTop: 30,
     },
-    botao2:{
-        marginLeft:220,
-        marginTop:500,
-        padding:10,
-        backgroundColor:'#392DE9',
-        borderRadius:8,
+    form: {
+        width: "100%",
+        height: "auto",
+        marginTop: 30,
+        padding: 10
     },
-    Tela:{
-        alignItems:'flex-start',
+    textButtonAcessar: {
+        fontSize: 22,
+        color: "#FFFFFF"
     },
-    Tela1:{
-        flex:1,
-        backgroundColor:'#1E90FF'
+    buttonAcessar1: {
+        borderRadius: 10,
+        alignItems: "center",
+        width: "40%",
+        backgroundColor: "#1C44D0",
+        paddingTop: 10,
+        paddingBottom: 10,
+        margin: 10,
+        marginTop: 30,
+        alignItems: 'center',
+        height: 50,
+
     },
-    Text:{marginTop:30,
-        marginLeft:20,
-        fontSize: 20,
+    buttonAcessar2: {
+        borderRadius: 10,
+        alignItems: "center",
+        width: "40%",
+        backgroundColor: "#1C44D0",
+        paddingTop: 10,
+        paddingBottom: 10,
+        margin: 10,
+        marginTop: 30,
+        alignItems: 'center',
+        height: 50,
     },
-    Text2:{
-        color:'#FFFFFF',
-        fontSize:20
+    div: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+
     },
-    Tela2:{
-        marginTop:30
-    } 
+    textTitle: {
+        marginTop: 40,
+        padding: 10,
+        marginBottom: 20,
+        color: "dodgerblue",
+        fontSize: 36,
+        fontWeight: "bold",
+        paddingTop: 10,
+        marginLeft: 0,
+
+    },
+
+    textinput: {
+        borderWidth: 5,
+        borderColor: 'dodgerblue',
+        backgroundColor: '#ECECEC',
+        padding: 17,
+        width: 390,
+        margin: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+
+    img: {
+        marginRight: 20,
+        marginLeft: 10,
+        marginTop: 30,
+        width: 200,
+        height: 100,
+    },
+    txt: {
+        marginLeft: 10,
+        color: "dodgerblue",
+    },
+
+    topo: {
+
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row-reverse'
+    },
+    
+
+    
+    
+        botao:{
+            width: 60,
+            marginLeft:20,
+            marginTop:40,
+            padding:10,
+            backgroundColor:'#1C44D0',
+            borderRadius:8,
+    }
 
 });
-
 export default styles;
