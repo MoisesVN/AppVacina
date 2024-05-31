@@ -33,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# configuração do axios/ ignorado pois deve usar o ip da maquina
+src\axios\config.js
