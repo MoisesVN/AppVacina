@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
         borderRadius:8,
     },
     botao2:{
-        marginLeft:220,
-        marginTop:500,
+        marginLeft:150,
+        marginTop:180,
         padding:10,
         backgroundColor:'#392DE9',
         borderRadius:8,
@@ -21,11 +21,14 @@ const styles = StyleSheet.create({
     },
     Tela1:{
         flex:1,
-        backgroundColor:'#1E90FF'
+        
     },
-    Text:{marginTop:30,
-        marginLeft:20,
-        fontSize: 20,
+    Text: {
+        marginTop: 30,
+        marginLeft: 20,
+        fontSize: 36,
+        fontWeight: "bold",
+        color: "dodgerblue",
     },
     Text2:{
         color:'#FFFFFF',
@@ -33,6 +36,16 @@ const styles = StyleSheet.create({
     },
     Tela2:{
         marginTop:30
+    },
+    textinput: {
+        borderWidth: 5,
+        borderColor: 'dodgerblue',
+        backgroundColor: '#ECECEC',
+        padding: 17,
+        width: 390,
+        margin: 10,
+        borderRadius: 5,
+        alignItems: 'center',
     }
 
 });
