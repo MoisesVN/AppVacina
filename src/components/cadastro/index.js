@@ -1,17 +1,30 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput, Image, ScrollView } from "react-native";
-
+import blogFetch from "../../axios/config";
 import { useNavigation } from "@react-navigation/native";
 
 import styles from './style';
 
-import logo from '../../../assets/logo.png';
-
+//import logo from '../../../assets/logo.png';
+//nao estava conseguindo comentar o codigo la em baixo por algum motivo entao apaguei e colei aqui
+//<Image style={styles.img} source={logo}></Image>
 export default function Cadastro() {
     //função usada em botões para trocar de tela
     const navigation = useNavigation();
     //const [textButton, setTextButton] = useState("Acessar");
+    const [email, setEmail] = useState ("");
+    const [senha, setSenha] = useState ("");
+    const [telefone, setTelefone] = useState ("");
 
+    function cadastrar(){
+        //postConta(); //comentado para nao precisar do back
+        navigation.navigate("Main");
+    }
+
+    async function postConta() {
+        const post = {  email, senha, telefone };
+        await blogFetch.post("/conta/cadastrar", post);
+    }
 
     return (
 
@@ -23,35 +36,41 @@ export default function Cadastro() {
                     </TouchableOpacity>
 
                     <View style={styles.topo}>
-
-                        <Image style={styles.img} source={logo}></Image>
+                        
                         <Text style={styles.textTitle}>Cadastro</Text>
                     </View>
 
-                    <Text style={styles.txt}> Digite seu CPF:</Text>
+                    <Text style={styles.txt}> Digite seu Email:</Text>
                     <TextInput
                         style={styles.textinput}
-                        placeholder="CPF" />
+                        onChangeText={setEmail}
+                        value={email}
+                        placeholder="Email" 
+                    />
 
                     <Text style={styles.txt}> Digite sua Senha:</Text>
                     <TextInput
                         style={styles.textinput}
+                        onChangeText={setSenha}
+                        value={senha}
                         placeholder="Senha" 
                         secureTextEntry={true}
-                        />
+                    />
 
-                    <Text style={styles.txt}> Confirme sua Senha:</Text>
+                    <Text style={styles.txt}> Digite seu Telefone:</Text>
                     <TextInput
                         style={styles.textinput}
-                        placeholder="Senha"
-                        secureTextEntry={true}
+                        onChangeText={setTelefone}
+                        value={telefone}
+                        placeholder="Telefone"
+                        //secureTextEntry={true}
                     />
 
                     <View style={styles.div}>
 
                         <TouchableOpacity
                             style={styles.buttonAcessar1}
-                            onPress={() => navigation.navigate("Home")}
+                            onPress={() => cadastrar()}
                         >
                             <Text style={styles.textButtonAcessar}>Confimar</Text>
                         </TouchableOpacity>
