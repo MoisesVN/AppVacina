@@ -5,14 +5,9 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from './style';
 
-<<<<<<< Updated upstream
-//import logo from '../../../assets/logo.png';
-//nao estava conseguindo comentar o codigo la em baixo por algum motivo entao apaguei e colei aqui
-//<Image style={styles.img} source={logo}></Image>
-=======
 import logo from '../../../assets/logo.webp';
 
->>>>>>> Stashed changes
+
 export default function Cadastro() {
     //função usada em botões para trocar de tela
     const navigation = useNavigation();
@@ -33,12 +28,15 @@ export default function Cadastro() {
 
     return (
 
-        <View style={styles.bodydiv}>
+        <View style={styles.bodydiv}> 
+        
             <ScrollView >
                 <View>
+                
                     <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao}>
                         <Image style={styles.seta} source={require("../imagens/kisspng-brand-logo-black-and-white-triangle-arrow-symbol-5a76c6d1df2c13.8388288415177335859141 (1).png")} />
                     </TouchableOpacity>
+                    <Image style={styles.img} source={require('../../../assets/logo.webp')} />
 
                     <View style={styles.topo}>
                         
