@@ -5,9 +5,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from './style';
 
+<<<<<<< Updated upstream
 //import logo from '../../../assets/logo.png';
 //nao estava conseguindo comentar o codigo la em baixo por algum motivo entao apaguei e colei aqui
 //<Image style={styles.img} source={logo}></Image>
+=======
+import logo from '../../../assets/logo.webp';
+
+>>>>>>> Stashed changes
 export default function Cadastro() {
     //função usada em botões para trocar de tela
     const navigation = useNavigation();
