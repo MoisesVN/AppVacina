@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from './style';
 
-// import logo from '../../../assets/logo.webp';
+import logo from '../../../assets/logo.webp';
 
 
 export default function Cadastro() {
