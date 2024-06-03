@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     Text:{marginTop:30,
         marginLeft:30,
         fontSize: 30,
+        color: "dodgerblue"
     },
     Tela2:{
         marginTop:30
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     TelaUser:{
 
         margin: 12,
-        marginLeft:65,
+        marginLeft:50,
         marginTop:120,
         padding:140,
         justifyContent: 'center',
@@ -41,16 +42,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         backgroundColor:'#FFF',
         padding: 140,
-        borderColor: '#392DE9', // Cor da borda
+        borderColor: 'dodgerblue', // Cor da borda
         borderWidth: 3,
         borderRadius:15 ,
         padding: 20,          // Preenchimento interno
-        
+
     },
     TextUser:{
         margin: 10,
         fontSize: 25,
-        
+
     },
 });
 

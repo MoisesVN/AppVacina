@@ -13,24 +13,23 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     Tela1: {
-        flex: 1,
         backgroundColor: "#FFFFFF",
     },
 
     Divdecima: {
+        paddingLeft: 20,
         marginTop: 30,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+       
 
     },
     imgdePerfil: {
+        marginLeft: 10,
         width: 140,
         height: 100,
         display: 'flex',
         justifyContent: 'center',
-        margin: 10,
-        marginRight: 10,
         backgroundColor: "#ECECEC",
         borderRadius: 18,
         alignItems: 'center'
@@ -39,9 +38,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         backgroundColor: "#ECECEC",
-        width: 230,
+        width: 220,
         height: 100,
-        margin: 10,
         borderRadius: 18,
     },
     DivdoMeio: {
