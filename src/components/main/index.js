@@ -11,12 +11,13 @@ export default function Form() {
     const [senha, setSenha] = useState("")
     const [textButton] = useState("Entrar")
     let valoresGlobais = {};
-    const id = 2;  
+      
     function Entrar() {
         if (email == "" || senha == "") {
             createAlert();
         } else {
-            getConta();
+            navigation.navigate("Home"); //apagar quando for para acessar com o back
+            //getConta(); //comentado para nao precisar do back para acessar
             //console.log(email , senha);//usei para verificar as informacoes recebidas do app no terminal
         }
     }
@@ -39,7 +40,7 @@ export default function Form() {
         }
     }
 
-    function logar(){
+    function logar() {
         if(email == valoresGlobais.email && senha == valoresGlobais.senha){
             navigation.navigate("Home");
         }else{
@@ -75,6 +76,7 @@ export default function Form() {
                     onChangeText={setSenha}
                     value={senha}
                     placeholder="Senha"
+                    secureTextEntry={true}
                 />
                 <TouchableOpacity style={styles.buttonAcessar} onPress={() => navigation.navigate("RecuperarConta")}>
                     <Text style={styles.textButtonAcessar}>Esqueci minha senha</Text>

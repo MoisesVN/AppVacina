@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 
     },
     textTitle: {
-        marginTop: 40,
+        marginTop: 10,
         padding: 10,
         marginBottom: 20,
         color: "dodgerblue",
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 
         display: 'flex',
         justifyContent: 'space-between',
-        flexDirection: 'row-reverse'
+        flexDirection: 'row'
     },
     
 
