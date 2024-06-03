@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from './style';
 
-import logo from '../../../assets/logo.png';
+// import logo from '../../../assets/logo.png';
 
 export default function Cadastro() {
     //função usada em botões para trocar de tela

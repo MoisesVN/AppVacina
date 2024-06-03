@@ -1,5 +1,6 @@
 package br.com.projeto.testeapi.controle;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.testeapi.modelo.Cadastro;
+
 import br.com.projeto.testeapi.repositorio.CadastroRepositorio;
+
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +21,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/cadastros")
+@RequestMapping("/ofcadastros")
 public class CadastroControle {
     
     @Autowired
     private CadastroRepositorio cadastro_Repositorio;
-  
+
+    //metado que retorna todas os cadastros que uma conta possue
+    @GetMapping("/conta/{id_conta}")
+    public ResponseEntity<List<Cadastro>> getCadastrosByConta(@PathVariable Long id_conta) {
+        List<Cadastro> cadastros = cadastro_Repositorio.findByConta_IdConta(id_conta);
+        if (cadastros.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(cadastros);
+    }
+
     // lista todos os cadastros
     @GetMapping("/listar")
     public Iterable<Cadastro> listar(){

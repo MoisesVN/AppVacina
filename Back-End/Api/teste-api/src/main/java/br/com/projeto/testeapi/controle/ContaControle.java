@@ -15,19 +15,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.testeapi.modelo.Conta;
 import br.com.projeto.testeapi.repositorio.ContaRepositorio;
+import jakarta.persistence.NonUniqueResultException;
 
 @RestController
-@RequestMapping("/conta")
+@RequestMapping("/ofconta")
 public class ContaControle {
     
     @Autowired
     private ContaRepositorio conta_Repositorio;
+
+    // método irá receber email e senha e devolver o id_conta
+    // exemplo: http://localhost:8080/conta/email.com/senha
+    @GetMapping("/{email}/{senha}")
+    public ResponseEntity<Long> acessoLogin (@PathVariable String email, @PathVariable String senha) {
+        try {
+            Conta conta = conta_Repositorio.findByEmailAndSenha(email, senha);
+            if (conta != null) {
+                return ResponseEntity.ok(conta.getId_conta());
+            } else {
+                return ResponseEntity.notFound().build(); // Retorna um erro 404
+            }
+        } catch (NonUniqueResultException e) {
+            return ResponseEntity.badRequest().body(null); // Retorna um erro 400
+        }
+    }
+
     // lista todas as contas
     @GetMapping("/listar")
     public Iterable<Conta> listar(){
         return conta_Repositorio.findAll();
     }
     // cria um novo cadastro
+    
     @PostMapping("/cadastrar")
     public Conta cadastrar(@RequestBody Conta obj){
         return conta_Repositorio.save(obj);
