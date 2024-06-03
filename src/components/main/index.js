@@ -25,7 +25,7 @@ export default function Form() {
     //buscando na api e salvando em variaveis globais o email e a senha.
     async function getConta() {
         try {  
-            const id = 1;      
+            //const id = 2;      
             const response = await blogFetch.get(`/conta/${id}`);
             const data = response.data;
             //console.log(data);//usei para verificar as informacoes recebidas da api no terminal

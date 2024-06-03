@@ -17,7 +17,7 @@ import lombok.Setter;
 @Table(name = "vacinas_Tomadas")
 @Getter
 @Setter
-@IdClass(VacinasTomdasId.class)
+@IdClass(VacinasTomadasId.class)
 public class VacinasTomadas {
 
 @Id

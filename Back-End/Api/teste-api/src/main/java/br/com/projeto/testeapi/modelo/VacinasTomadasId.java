@@ -15,15 +15,9 @@ import lombok.Setter;
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
-public class VacinasTomdasId implements Serializable {
+public class VacinasTomadasId implements Serializable {
 
     private Long fk_idListaVacina;
     private Long fk_idCarteiraVacina;
 
-    /* public VacinasTomdasId() {}
-
-    public VacinasTomdasId(Long fk_idListaVacina, Long fk_idCarteiraVacina) {
-        this.fk_idListaVacina = fk_idListaVacina;
-        this.fk_idCarteiraVacina = fk_idCarteiraVacina;
-    } */
 }
