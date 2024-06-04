@@ -2,20 +2,18 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
 
-    botao:{
-        marginLeft:20,
-        marginTop:40,
-        padding:10,
-        backgroundColor:'#392DE9',
-        borderRadius:8,
+    botao2: {
+        marginLeft: 170,
+        marginTop: 100,
+        padding: 10,
+        backgroundColor: '#392DE9',
+        borderRadius: 8,
     },
-    botao2:{
-        marginLeft:280,
-        marginTop:500,
-        padding:10,
-        backgroundColor:'#392DE9',
-        borderRadius:8,
+    Text2: {
+        color: '#FFFFFF',
+        fontSize: 20
     },
+
     Tela:{
         alignItems:'flex-start',
     },
@@ -23,8 +21,8 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:'#FFF'
     },
-    Text:{marginTop:30,
-        marginLeft:30,
+    Text:{marginTop:50,
+        marginLeft:50,
         fontSize: 30,
         color: "dodgerblue"
     },
@@ -34,8 +32,8 @@ const styles = StyleSheet.create({
     TelaUser:{
 
         margin: 12,
-        marginLeft:50,
-        marginTop:120,
+        marginLeft:35,
+        marginTop:100,
         padding:140,
         justifyContent: 'center',
         height: 300, 

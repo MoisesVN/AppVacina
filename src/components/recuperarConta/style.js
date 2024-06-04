@@ -2,21 +2,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
 
-    botao: {
-        marginLeft: 20,
-        marginTop: 40,
-        padding: 10,
-        backgroundColor: '#392DE9',
-        borderRadius: 8,
-    },
     botao2: {
         marginLeft: 150,
-        marginTop: 350,
+        marginTop: 300,
         padding: 10,
         backgroundColor: '#392DE9',
         borderRadius: 8,
     },
     Tela: {
+        marginTop: 50,
         alignItems: 'flex-start',
     },
     Tela1: {
@@ -46,6 +40,7 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 5,
         alignItems: 'center',
+        marginTop: 50,
     }
 
 });

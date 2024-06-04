@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     Tela1: {
+        width: "100%",
+        height: "100%",
         backgroundColor: "#FFFFFF",
     },
 
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     DivdeBaixo: {
         backgroundColor: "#ECECEC",
         width: 370,
-        height: 200,
+        height: 140,
         margin: 10,
         marginLeft: 20,
         borderRadius: 18,
@@ -68,11 +70,13 @@ const styles = StyleSheet.create({
     },
 
     divconteiner: {
-
         display: 'flex',
         alignItems: 'center',
-    }
 
+    },
+    vacinas: {
+        //flex: 1
+    }
 
 });
 

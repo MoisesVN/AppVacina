@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, TextInput, Image, ScrollView } from "react-native";
+import { useState } from "react";
+import { View, Text, TouchableOpacity, TextInput, Image, ScrollView, Alert } from "react-native";
 import blogFetch from "../../axios/config";
 import { useNavigation } from "@react-navigation/native";
 
@@ -16,14 +16,27 @@ export default function Cadastro() {
     const [senha, setSenha] = useState ("");
     const [telefone, setTelefone] = useState ("");
 
+    const createAlert = () => Alert.alert(
+        "Oops!",
+        "Verifique se todos os campos estão preenchidos."
+    );
+
     function cadastrar(){
-        //postConta(); //comentado para nao precisar do back
-        navigation.navigate("Main");
+        if (email == "" || senha == "" || telefone == "") {
+            createAlert();
+        } else {
+            postConta();  
+        }
     }
 
     async function postConta() {
-        const post = {  email, senha, telefone };
-        await blogFetch.post("/conta/cadastrar", post);
+        try {   
+            const post = {  senha, email, telefone };
+            await blogFetch.post("/conta/cadastrar", post);
+            navigation.navigate("Main");
+        } catch (error) {
+            console.log(error);//pode apagar
+        }
     }
 
     return (
@@ -32,12 +45,8 @@ export default function Cadastro() {
         
             <ScrollView >
                 <View>
-                
-                    <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao}>
-                        <Image style={styles.seta} source={require("../imagens/kisspng-brand-logo-black-and-white-triangle-arrow-symbol-5a76c6d1df2c13.8388288415177335859141 (1).png")} />
-                    </TouchableOpacity>
+                    
                     <Image style={styles.img} source={require('../../../assets/logo.webp')} />
-
                     <View style={styles.topo}>
                         
                         <Text style={styles.textTitle}>Cadastro</Text>
@@ -66,7 +75,7 @@ export default function Cadastro() {
                         onChangeText={setTelefone}
                         value={telefone}
                         placeholder="Telefone"
-                        //secureTextEntry={true}
+                        keyboardType="numeric"
                     />
 
                     <View style={styles.div}>

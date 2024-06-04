@@ -1,62 +1,31 @@
-import React, { useState,useEffect } from "react";
+import { useState,useContext } from "react";
 import { View, TextInput, Text, TouchableOpacity, Alert } from "react-native";
-import styles from "./style.js";
+import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
-import blogFetch from "../../axios/config.js"
 import logo from "../imagens/logo.png"
+import { AuthContext } from "../../context/auth"
 
 export default function Form() {
     const navigation = useNavigation();
-    const [email, setEmail] = useState("")
-    const [senha, setSenha] = useState("")
-    const [textButton] = useState("Entrar")
-    let valoresGlobais = {};
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [textButton] = useState("Entrar");
+    const { logIn } = useContext(AuthContext);
+
+    const createAlert = () => Alert.alert(
+        "Oops!",
+        "Verifique se o campo email e senha estão preenchidos."
+    );
       
     function Entrar() {
         if (email == "" || senha == "") {
             createAlert();
         } else {
-            navigation.navigate("Home"); //apagar quando for para acessar com o back
-            //getConta(); //comentado para nao precisar do back para acessar
+            logIn(email, senha);
             //console.log(email , senha);//usei para verificar as informacoes recebidas do app no terminal
         }
     }
-
-    //buscando na api e salvando em variaveis globais o email e a senha.
-    async function getConta() {
-        try {  
-            //const id = 2;      
-            const response = await blogFetch.get(`/conta/${id}`);
-            const data = response.data;
-            //console.log(data);//usei para verificar as informacoes recebidas da api no terminal
-            valoresGlobais = { 
-                email : data.email,
-                senha : data.senha
-            };   
-            logar();
-        } catch (error) {
-            console.log(error);//provalvemente email nao encontrado
-            loginErrado();
-        }
-    }
-
-    function logar() {
-        if(email == valoresGlobais.email && senha == valoresGlobais.senha){
-            navigation.navigate("Home");
-        }else{
-            loginErrado();
-        }
-    }
     
-    const createAlert = () => Alert.alert(
-        "Oops!",
-        "Verifique se o campo email e senha estão preenchidos."
-    );
-
-    const loginErrado = () => Alert.alert(
-        "Oops!",
-        "Email ou senha errado"
-    );
     
     return (
         <View style={styles.form}>
@@ -68,7 +37,6 @@ export default function Form() {
                     onChangeText={setEmail}
                     value={email}
                     placeholder="Email"
-                    //keyboardType="numeric"
                 />
                 <Text style={styles.title}>Digite sua Senha</Text>
                 <TextInput

@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         borderColor: "#1E90FF",
         display: "flex",
         flexDirection: "column",
-        padding: 7
+        padding: 7,
+        marginTop: 15
     },
     divTopo: {
         width: "100%",
@@ -115,12 +116,15 @@ const styles = StyleSheet.create({
     },
     botao2: {
         marginBottom: 20,
-        borderRadius: 90,
+        borderRadius: 50,
         padding: 30,
         backgroundColor: '#1E90FF'
     },
     botao: {
         marginLeft: "30%"
+    },
+    container: {
+        flex: 1        
     }
 });
 

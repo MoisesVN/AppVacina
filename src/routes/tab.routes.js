@@ -2,6 +2,7 @@ import { View } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import styles from "./style";
+import PrivateRoute from "./private";
 
 // Importação das páginas/componentes do aplicativo
 import Main from '../components/main';
@@ -60,30 +61,50 @@ export default function TabRoutes(){
             options={{ headerShown: false}}
             />
             <Stack.Screen
-            name = 'Home'
-            component={Home}
-            options={{ headerShown: false}}
-            />
+                name = 'Home'
+                options={{ headerShown: false}}>
+                    {() => (
+                        <PrivateRoute>
+                            <Home />
+                        </PrivateRoute>
+                    )}
+                </Stack.Screen>
             <Stack.Screen
-            name = 'CarteiraCadastro'
-            component={CarteiraCadastro}
-            options={{ headerShown: false}}
-            />
+                name = 'CarteiraCadastro'
+                options={{ headerShown: false}}>
+                    {() => (
+                        <PrivateRoute>
+                            <CarteiraCadastro />
+                        </PrivateRoute>
+                    )}
+                </Stack.Screen>
             <Stack.Screen
-            name = 'Carteira'
-            component={Carteira}
-            options={{ headerShown: false}}
-            />
+                name = 'Carteira'
+                options={{ headerShown: false}}>
+                    {() => (
+                        <PrivateRoute>
+                            <Carteira />
+                        </PrivateRoute>
+                    )}
+                </Stack.Screen> 
             <Stack.Screen
-            name = 'VacinaCadastro'
-            component={VacinaCadastro}
-            options={{ headerShown: false}}
-            />
+                name = 'VacinaCadastro'
+                options={{ headerShown: false}}>
+                {() => (
+                    <PrivateRoute>
+                        <VacinaCadastro />
+                    </PrivateRoute>
+                )}
+            </Stack.Screen> 
             <Stack.Screen
-            name = 'MenuConfig'
-            component={MenuConfig}
-            options={{ headerShown: false}}
-            />
+                name = 'MenuConfig'
+                options={{ headerShown: false}}>
+                {() => (
+                    <PrivateRoute>
+                        <MenuConfig />
+                    </PrivateRoute>
+                )}
+            </Stack.Screen> 
         </Stack.Navigator>
     );
 }

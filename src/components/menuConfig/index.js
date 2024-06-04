@@ -1,34 +1,63 @@
+import { useContext, useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./style";
+import { AuthContext } from "../../context/auth";
+import blogFetch from "../../axios/config";
 
 export default function Info() {
     const navigation = useNavigation();
+    const { idToken, logOut } = useContext(AuthContext);
+    const [email, setEmail] = useState();
+    const [telefone, setTelefone] = useState();
+    const [loading, setLoading] = useState(true);
 
+    async function getDados(){
+        try {
+            const response = await blogFetch.get(`conta/${idToken}`);
+            const { email, telefone } = response.data;
+            setEmail(email);
+            setTelefone(telefone);
+            setLoading(false);
+        } catch (error) {
+            console.log(error);//pode apagar
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        getDados();
+    }, []);
+
+    const infoUser = () => (
+        <View style={styles.TelaUser}>      
+            <Text style={styles.TextUser}>Email: {email} </Text>
+            <Text style={styles.TextUser}>Telefone: {telefone} </Text>
+            <Text style={styles.TextUser}>Trocar senha {idToken}</Text>
+        </View>
+    );
    
     return(
     <View style={styles.Tela1}>
         <View style={styles.Tela}> 
-        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.botao}>
-        <Image source={require("../imagens/kisspng-brand-logo-black-and-white-triangle-arrow-symbol-5a76c6d1df2c13.8388288415177335859141 (1).png")}/>
-    </TouchableOpacity>
-    <View style={styles.Tela}><Text style={styles.Text}>informações do cadastro</Text>
-    
-    <View style={styles.TelaUser}>  
-        <Text style={styles.TextUser}>CPF:123.456.789.10</Text>
-        <Text style={styles.TextUser}>EMAIL:meuemail@.com </Text>
-        <Text style={styles.TextUser}>SENHA:12345678</Text>
 
-    </View>
-    
-    <TouchableOpacity onPress={() => navigation.navigate("Main")} style={styles.botao2}>
-    <Image source={require("../imagens/kisspng-computer-icons-emergency-exit-download-clip-art-exit-door-5b2c9a0a3c76a8.0319592615296496742477 (1).png")}/>
-    </TouchableOpacity>
-    
-    </View>
-    </View>
-    </View>
+    <View style={styles.Tela}>
+        <Text style={styles.Text}>Informações da conta</Text>
+
+    <View>
+                {loading ? (
+                    <Text>Procurando informações da conta</Text>
+                ) : (
+                    infoUser()
+                )}
+            </View>
     
 
+    <TouchableOpacity onPress={() => logOut()} style={styles.botao2}>
+    <Text style={styles.Text2}>Logout</Text>
+    </TouchableOpacity>
+    </View>
+    </View>
+    </View>
     )
 }

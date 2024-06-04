@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         fontSize: 36,
         fontWeight: "bold",
         paddingTop: 10,
-        marginLeft: 0,
+        marginLeft: 10,
 
     },
 
@@ -93,18 +93,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
-    
-
-    
-    
-        botao:{
-            width: 60,
-            marginLeft:20,
-            marginTop:40,
-            padding:10,
-            backgroundColor:'#1C44D0',
-            borderRadius:8,
-    }
+ 
 
 });
 export default styles;
