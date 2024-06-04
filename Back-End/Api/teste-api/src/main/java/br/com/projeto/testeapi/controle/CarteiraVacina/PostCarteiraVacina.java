@@ -37,6 +37,35 @@ public class PostCarteiraVacina {
         }
 
         Cadastro cadastro = cadastroOptional.get();
+
+        // Criar uma nova instância de CarteiraVacina com um novo ID único
+        CarteiraVacina carteiraVacina = new CarteiraVacina();
+        carteiraVacina.setCadastro(cadastro);
+
+        // Verifica se a foto foi enviada
+        if (file != null && !file.isEmpty()) {
+            carteiraVacina.setFoto(file.getBytes());
+        }
+
+        carteira_Vacina_Reposirotorio.save(carteiraVacina);
+        
+        return ResponseEntity.ok("Carteira de vacina cadastrada com sucesso.");
+    } catch (Exception e) {
+        return ResponseEntity.status(500).body("Erro ao cadastrar carteira de vacina: " + e.getMessage());
+    }
+}
+
+    
+    /*@PostMapping("/cadastrar")
+    public ResponseEntity<?> cadastrar(@RequestParam("id_cadastro") Long idCadastro,
+                                   @RequestParam(value = "foto", required = false) MultipartFile file) {
+    try {
+        Optional<Cadastro> cadastroOptional = cadastroRepositorio.findById(idCadastro);
+        if (!cadastroOptional.isPresent()) {
+            return ResponseEntity.badRequest().body("Cadastro não encontrado.");
+        }
+
+        Cadastro cadastro = cadastroOptional.get();
         CarteiraVacina carteiraVacina = new CarteiraVacina(idCadastro, null, cadastro);
 
         // Verifica se a foto foi enviada
@@ -49,6 +78,6 @@ public class PostCarteiraVacina {
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Erro ao cadastrar carteira de vacina: " + e.getMessage());
         }
-    }
+    }*/
    
 }
