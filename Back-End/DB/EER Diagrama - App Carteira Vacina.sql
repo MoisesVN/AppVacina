@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `CarteiraVacina` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ListaVacinas` (
   `id_ListaVacinas` INT NOT NULL AUTO_INCREMENT,
-  `DescricaoVacina `VARCHAR(45) NOT NULL,
+  `DescricaoVacina` VARCHAR(45) NOT NULL,
   `Vacina` VARCHAR(45) NOT NULL,
   `QuantDose` INT NOT NULL,
   `DataParaVacinar` INT NOT NULL,
