@@ -23,8 +23,6 @@ const styles = StyleSheet.create({
         marginTop: 30,
         display: 'flex',
         flexDirection: 'row',
-       
-
     },
     imgdePerfil: {
         marginLeft: 10,
@@ -76,8 +74,23 @@ const styles = StyleSheet.create({
     },
     vacinas: {
         //flex: 1
+    },
+    container: {
+        //flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    image: {
+        borderRadius: 18,
+        width: "100%",
+        height: "100%",
+        resizeMode: 'cover', // ou 'cover', 'stretch', etc., conforme necessário
+    },
+    textError:{
+        paddingLeft: 90,
+        paddingTop: 30,
+        fontSize: 20
     }
-
 });
 
 export default styles;

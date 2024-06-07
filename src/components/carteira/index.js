@@ -1,27 +1,30 @@
 import React, { useState, useContext, useEffect } from "react";
-import { View, Text, SafeAreaView, VirtualizedList, TouchableOpacity, Image } from "react-native";
+import { View, Text, SafeAreaView, VirtualizedList, TouchableOpacity, Image, ScrollView } from "react-native";
 import styles from "./style";
 import { AuthContext } from "../../context/auth";
 import blogFetch from "../../axios/config";
+import { Buffer } from "buffer";
 
 export default function Info() {
     const { idCadastro, nome } = useContext(AuthContext);
-    const [idCarteira, setIdCarteira] = useState();
+    //const [idCarteira, setIdCarteira] = useState();
+    const [imagem, setImagem] = useState ();
     const [dados, setDados] = useState();
     const [loading, setLoading] = useState(true);
+    const [loadingImg, setLoadingImg] = useState(true);
     const [error, setError] = useState(false);
+    const [errorImg, setErrorImg] = useState(false);
 
     
-
+    /*
     async function getIdCarteira(){
-        console.log();
         try {
             const response = await blogFetch.get(`/carteira-vacina/listar-id/${idCadastro}`);
             const data = (response.data);
             const carteira = data.id_carteiraVacina;
             setIdCarteira(carteira);
             getDados();
-            console.log(data);
+            //console.log(data);
         } catch (error) {
             const cadastro = "idCadastro";
             const formData = new FormData();
@@ -29,9 +32,9 @@ export default function Info() {
             //formData.append('foto', null);
             await blogFetch.post("/carteira-vacina/cadastrar", formData);
             getIdCarteira();
-            console.log(error, formData);
+            //console.log(error, formData);
         }
-    }
+    }*/
 
     async function getDados(){
         try {
@@ -44,9 +47,46 @@ export default function Info() {
             setLoading(false);
         }
     }
+  
+    const fetchImage = async () => {
+        try {
+          const response = await blogFetch.get(`/carteira-vacina/foto/${idCadastro}`, {
+            responseType: 'arraybuffer',
+          });
+          const binaryString = Buffer.from(response.data, 'binary').toString('base64');
+          return binaryString;
+        } catch (error) {
+          console.error("Erro ao buscar a foto:", error);
+          setErrorImg(true);
+          throw error;
+        }
+      };
+    
+      const binaryToBase64 = (binary) => {
+        return `data:image/jpeg;base64,${binary}`;
+      };
+    
+      const loadImage = async () => {
+        try {
+          const binaryString = await fetchImage();
+          const base64String = binaryToBase64(binaryString);
+          setImagem(base64String);
+          setLoadingImg(false);
+          //console.log(base64String);
+        } catch (error) {
+            console.error(error);
+        }
+      };
+    /*
+    const loadImage = async () => {
+        const response = await blogFetch.get(`/carteira-vacina/foto/${idCadastro}`);
+        const data = response.data;
+        console.log(data);
+    }*/
 
     useEffect(() => {
         getDados();
+        loadImage();
     }, []);
 
     const getVacinas = (dados, index) => dados[index];
@@ -72,7 +112,17 @@ export default function Info() {
                         <Text style={styles.Txt}>nome: {nome} </Text>
                     </View>
                     <View style={styles.imgdePerfil}>
-                        <Text>Imagem aqui!</Text>
+                    {loadingImg ? (
+                        <Text>Procurando imagem</Text>
+                    ) : errorImg ? (
+                        <Text>Foto não cadastrada</Text>
+                    ) : (                     
+                        <Image
+                            source={{ uri: imagem }}
+                            //source={{ uri: "https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg" }}
+                            style={styles.image}
+                        />                        
+                    )}
                     </View>
                 </View>
                 <View style={styles.DivdoMeio}>
@@ -86,15 +136,15 @@ export default function Info() {
                     {loading ? (
                         <Text>Procurando informações das vacinas</Text>
                     ) : error ? (
-                        <Text>Sem vacinas cadastradas</Text>
+                        <Text style={styles.textError}>Sem vacinas cadastradas</Text>
                     ) : (
-                        <VirtualizedList
-                            data={dados}
-                            initialNumToRender={100}
-                            renderItem={vacinasTomadas}
-                            keyExtractor={(vacinas) => vacinas.id_listavacina.toString()}
-                            getItem={getVacinas}
-                            getItemCount={getVacinasCount}
+                            <VirtualizedList
+                                data={dados}
+                                initialNumToRender={100}
+                                renderItem={vacinasTomadas}
+                                keyExtractor={(vacinas) => vacinas.id_listavacina.toString()}
+                                getItem={getVacinas}
+                                getItemCount={getVacinasCount}
                             />
                         )}
                 </SafeAreaView> 

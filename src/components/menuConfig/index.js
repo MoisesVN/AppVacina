@@ -33,7 +33,7 @@ export default function Info() {
         <View style={styles.TelaUser}>      
             <Text style={styles.TextUser}>Email: {email} </Text>
             <Text style={styles.TextUser}>Telefone: {telefone} </Text>
-            <Text style={styles.TextUser}>Trocar senha {idToken}</Text>
+            <Text style={styles.TextUser}>Trocar senha</Text>
         </View>
     );
    

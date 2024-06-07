@@ -59,17 +59,15 @@ public class GetCarteiraVacina {
     } */
     @GetMapping("/foto/{id_carteira}")
     public ResponseEntity<byte[]> fotoCarteiraID(@PathVariable Long id_carteira) {
-    Optional<CarteiraVacina> carteiraVacinaOptional = carteira_Vacina_Reposirotorio.findById(id_carteira);
-    if (carteiraVacinaOptional.isPresent()) {
-        CarteiraVacina carteiraVacina = carteiraVacinaOptional.get();
-        // Retornar a imagem como um array de bytes com o tipo de conteúdo adequado
-        return ResponseEntity.ok()
-            .contentType(MediaType.IMAGE_JPEG) // ou MediaType.IMAGE_PNG, dependendo do tipo de imagem
-            .body(carteiraVacina.getFoto());
-    } else {
-        return ResponseEntity.notFound().build();
+        Optional<CarteiraVacina> carteiraVacinaOptional = carteira_Vacina_Reposirotorio.findById(id_carteira);
+        if (carteiraVacinaOptional.isPresent()) {
+            CarteiraVacina carteiraVacina = carteiraVacinaOptional.get();
+            // Retornar a imagem como um array de bytes com o tipo de conteúdo adequado
+            return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG) // ou MediaType.IMAGE_PNG, dependendo do tipo de imagem
+                .body(carteiraVacina.getFoto());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
-}
-
-
 }
